@@ -8,8 +8,15 @@
     ansible_port: <port> # default port you have previously configured!
 #    ansible_port: 22 # default port to connect to
 #    ansible_port: 1984 # default port to connect to
+
+- name: "Hey OP! Here I come!"
+  mattermost:
+    url: 'https://<your_server>.wtf' #¯\_(ツ)_/¯
+    api_key: '<api_key>'
+    text: "{{ ansible_hostname }} ({{ inventory_hostname }}) is deploying !"
+
 - name: Ping before OPS
     ping:
-      
+
   roles:
     - common_config
